@@ -76,7 +76,7 @@ function Header() {
     <header id="header" className={`${styles.header} container`}>
       <a href="#" className={styles.logo}>
         <img src={logoImg} alt="logo" className={styles.image} />
-        <h1 className={styles.heading}>Weatherito</h1>
+        <h1 className={styles.heading}>TempFlow</h1>
       </a>
       <div
         className={`${styles.searchView} ${isSearchOpen ? styles.open : ""}`}
@@ -94,13 +94,6 @@ function Header() {
             autoComplete="off"
             onChange={handleSearchInput}
           />
-          <button
-            className={styles.closeS}
-            aria-label="close search"
-            onClick={closeSearch}
-          >
-            <FaArrowLeft />
-          </button>
         </div>
         <div className={styles.searchResult} data-search-result>
           <ul className={styles.viewList} ref={listRef}>
@@ -129,14 +122,6 @@ function Header() {
       <div className={styles.end}>
         <div className={styles.headerActions}>
           <button
-            className={styles.openS}
-            aria-label="open search"
-            title="open search"
-            onClick={openSearch}
-          >
-            <FaSearch />
-          </button>
-          <button
             name="location"
             disabled={isDisabled}
             className={styles.btn}
@@ -148,14 +133,6 @@ function Header() {
             <span className={styles.locationBtn}>Current Location</span>
           </button>
         </div>
-        <button
-          className={styles.toggle}
-          aria-label="switch between light and dark mode"
-          title="switch the theme"
-          onClick={toggleMode}
-        >
-          {isDarkMode ? <FaSun /> : <FaMoon />}
-        </button>
       </div>
     </header>
   );

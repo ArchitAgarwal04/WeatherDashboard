@@ -1,81 +1,186 @@
-@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600;1,700;1,800;1,900&family=Flavors&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --back-ground-color: #fafafa;
-  --boxes-colors: #eaeaea;
-  --boxes-colors2: #d9d9d9;
-  --search-color: #e9e6e6;
-  --main-text-color: #000000;
-  --sec-text-color: #777777;
-  --input-hover: #dddddd;
-  --transition: 0.3s;
-}
+  /* Colors */
+    --background-gradient: radial-gradient(circle, #044c44 , #260332); /* Dark Blue to Purple */
+    --card-gradient: linear-gradient(145deg, #00796b , #290455); /* Deep Blue to Purple */
+    --highlight-color: #ff5722; /* Vivid Orange for highlights */
+    --text-primary: #ffffff; /* White for main text */
+    --text-muted: #b0bec5; /* Soft Gray for secondary text */
+    --accent-blue: #00bcd4; /* Cyan Blue for interactive elements */
+    --border-color: #3949ab; /* Subtle Blue border for separation */
 
-body.dark {
-  --back-ground-color: #101014;
-  --boxes-colors: #1b1a1d;
-  --boxes-colors2: #16161a;
-  --search-color: #1e1e1e;
-  --main-text-color: #ffffff;
-  --sec-text-color: #7b7980;
-  --input-hover: #302f2f;
-  --transition: 0.3s;
+
+  /* Borders and Effects */
+  --border-radius: 12px;
+  --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  --hover-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  --transition: all 0.3s ease-in-out;
+  
 }
 
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
 body {
-  font-family: "Exo 2", sans-serif;
-  background-color: var(--back-ground-color);
-  color: var(--main-text-color);
+  background: var(--background-gradient);
+  color: var(--text-primary);
+  line-height: 1.6;
+  padding: 2rem;
+  min-height: 100vh;
+  
 }
-
-::-webkit-scrollbar {
-  width: 6px;
-  height: 5px;
-}
-
-::-webkit-scrollbar-track {
-  background-color: var(--boxes-colors);
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--sec-text-color);
-  border-radius: 10px;
-}
-
 .container {
-  padding: 0 15px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.2); /* Light transparent background */
+  backdrop-filter: blur(5px); /* Light blur effect */
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
 }
 
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
+/* Header with blur effect (already applied in your original code) */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background: var(--card-gradient);
+  backdrop-filter: blur(10px); /* Applying the blur effect */
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.header h1 {
+  font-size: 2rem;
+  color: var(--accent-blue);
+}
+
+.header input {
+  background: #2f3258;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.8rem 1.5rem;
+  color: var(--text-muted);
+  width: 250px;
+}
+
+.header input:focus {
+  outline: none;
+  box-shadow: var(--hover-shadow);
+}
+
+/* Main Highlights Section */
+.main-highlights {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.card {
+  flex: 1;
+  min-width: 250px;
+  background: rgba(0, 0, 0, 0.2); /* Semi-transparent background */
+  backdrop-filter: blur(5px); /* Light blur effect */
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+.card:hover {
+  box-shadow: var(--hover-shadow);
+}
+
+/* Footer with blur effect */
+.footer {
+  margin-top: 3rem;
+  text-align: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.2); /* Light transparent background */
+  backdrop-filter: blur(5px); /* Light blur effect */
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.card h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--highlight-color);
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* Forecast Section */
+.forecast {
+  margin-top: 2rem;
+}
+
+.forecast-header {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--accent-blue);
+}
+
+.forecast-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.forecast-card {
+  background: var(--card-gradient);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+.forecast-card:hover {
+  box-shadow: var(--hover-shadow);
+}
+
+.forecast-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.forecast-card p {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.forecast-card .temp {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--highlight-color);
+}
+
+
+.footer p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-highlights {
+    flex-direction: column;
+  }
+
+  .forecast-cards {
+    grid-template-columns: 1fr;
   }
 }
 
-@media (min-width: 768px) {
-  .container {
-    max-width: 750px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    max-width: 970px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1170px;
-  }
-}

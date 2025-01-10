@@ -1,40 +1,56 @@
 footer {
   display: block;
   margin: 30px auto;
-  width: fit-content;
+  width: 20%;
   padding: 20px;
-  text-align: center;
+  text-align:  center;
+  background: rgba(11, 1, 36, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all var(--transition-duration) ease;
 }
 
-footer .openWeather {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
+footer:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 40px rgba(76, 29, 149, 0.2);
 }
 
-footer .openWeather a img {
-  width: 110px;
-  padding-left: 5px;
+
+footer .openWeather a img:hover {
+  transform: scale(1.1);
 }
 
 footer p {
   margin-bottom: 10px;
+  color: var(--text-color);
 }
 
 .info {
   font-weight: 600;
+  color: var(--secondary-text-color);
 }
 
 .myName {
   font-size: 18px;
   font-weight: bold;
-  color: #eb6e4b;
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+  color: rgb(1, 0, 3);
+  text-shadow: 0 2px 4px rgba(236, 72, 153, 0.1);
 }
 
 .links a {
-  color: #2196f3;
+  color: var(--primary-color);
   padding: 5px;
   font-size: 22px;
   text-decoration: none;
+  transition: all var(--transition-duration) ease;
+}
+
+.links a:hover {
+  color: var(--accent-color);
+  transform: translateY(-2px);
+  display: inline-block;
 }

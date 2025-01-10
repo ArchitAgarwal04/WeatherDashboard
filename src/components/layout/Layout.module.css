@@ -6,8 +6,41 @@
   margin-bottom: 50px;
 }
 
+.main .left-panel, .main .right-panel {
+  background: var(--card-gradient); /* Apply the card gradient for the sections */
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+  color: var(--text-primary); /* White text color for readability */
+}
+
+.main .left-panel h2, .main .right-panel h2 {
+  color: var(--accent-blue); /* Accent blue for section titles */
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.main .left-panel p, .main .right-panel p {
+  font-size: 1rem;
+  color: var(--text-muted); /* Soft gray for secondary text */
+}
+
+/* Responsive Design for Smaller Screens */
 @media (max-width: 992px) {
   .main {
     grid-template-columns: 100%;
+    gap: 20px; /* Reduce the gap for mobile responsiveness */
+  }
+
+  .main .left-panel, .main .right-panel {
+    padding: 1rem; /* Adjust padding for smaller screens */
+  }
+
+  .main .left-panel h2, .main .right-panel h2 {
+    font-size: 1.3rem; /* Slightly smaller font size for headers on small screens */
+  }
+
+  .main .left-panel p, .main .right-panel p {
+    font-size: 0.9rem; /* Adjust text size for better readability on mobile */
   }
 }

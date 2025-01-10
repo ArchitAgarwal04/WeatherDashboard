@@ -35,8 +35,10 @@ function Forecast() {
               loading="lazy"
             />
             <span>{parseInt(item.forecastItem.main.temp_max)}°c</span>
-            <p className={styles.label}>{item.formattedDate}</p>
-            <p className={styles.label}>{item.dayName}</p>
+            <div className={styles.label}>
+              <p>{item.formattedDate}</p>
+              <p className={styles.label}>{item.dayName}</p>
+            </div>
           </div>
         ))}
       </div>
